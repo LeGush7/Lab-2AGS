@@ -44,9 +44,9 @@ values = []
 charcodes = []
 doc = etree.parse('currency.xml')
 root = doc.getroot()
-for element in root.findall('.//NumCode'):
-    values.append(element.text)
-for element in root.findall('.//Value'):
+for element in root.findall('.//CharCode'):
     charcodes.append(element.text)
-print(values)
+for element in root.findall('.//Value'):
+    values.append(element.text)
 print(charcodes)
+print(values)
